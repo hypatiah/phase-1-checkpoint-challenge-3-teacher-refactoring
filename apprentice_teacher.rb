@@ -1,8 +1,6 @@
-require_relative 'Teaching'
 require_relative 'HighFive'
 
 class ApprenticeTeacher
-  include Teaching
   include HighFive
   attr_reader :age, :salary, :phase, :target_raise
   attr_accessor :name
@@ -51,7 +49,6 @@ class ApprenticeTeacher
     response
   end
 
-  private
   def attend_training_session
     puts "Whoa. I know ruby-fu"
   end
