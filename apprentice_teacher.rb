@@ -31,14 +31,14 @@ class ApprenticeTeacher
     response
   end
 
-  # def salary=(new_salary)
-  #   puts "This better be good!"
-  #   @salary = new_salary
-  # end
+  def salary=(new_salary)
+    puts "This better be good!"
+    @salary = new_salary
+  end
 
-  # def receive_raise(raise)
-  #   @salary += raise
-  # end
+  def receive_raise(raise)
+    @salary += raise
+  end
 
   def set_performance_rating(rating)
     response = ""
@@ -51,6 +51,7 @@ class ApprenticeTeacher
     response
   end
 
+  private
   def attend_training_session
     puts "Whoa. I know ruby-fu"
   end

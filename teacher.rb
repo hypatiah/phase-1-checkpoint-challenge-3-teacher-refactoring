@@ -1,18 +1,18 @@
-require_relative 'Teaching'
 require_relative 'apprentice_teacher'
 require_relative 'HighFive'
 
 class Teacher < ApprenticeTeacher
-  include Teaching
   include HighFive
-  
+  remove_method attend_training_session
+
   attr_reader :age, :salary, :phase, :performance_rating, :target_raise
   attr_accessor :name
 
   def initialize(options={})
-    @phase = 3
-    @age = options.fetch(:age, 0)
-    @name = options.fetch(:name, "")
+    super
+    # @phase = 3
+    # @age = options.fetch(:age, 0)
+    # @name = options.fetch(:name, "")
     @target_raise = 1000
   end
 
@@ -20,10 +20,10 @@ class Teacher < ApprenticeTeacher
   #   "High five!"
   # end
 
-  def set_phase(num)
-    @phase = num
-    "Cool, I've always wanted to teach phase #{num}!"
-  end
+  # def set_phase(num)
+  #   @phase = num
+  #   "Cool, I've always wanted to teach phase #{num}!"
+  # end
 
   def teach_stuff
     response = ""
