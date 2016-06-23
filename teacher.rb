@@ -1,7 +1,11 @@
 require_relative 'Teaching'
 require_relative 'apprentice_teacher'
+require_relative 'HighFive'
+
 class Teacher < ApprenticeTeacher
   include Teaching
+  include HighFive
+  
   attr_reader :age, :salary, :phase, :performance_rating, :target_raise
   attr_accessor :name
 
@@ -12,9 +16,9 @@ class Teacher < ApprenticeTeacher
     @target_raise = 1000
   end
 
-  def offer_high_five
-    "High five!"
-  end
+  # def offer_high_five
+  #   "High five!"
+  # end
 
   def set_phase(num)
     @phase = num
