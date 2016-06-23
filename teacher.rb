@@ -1,4 +1,7 @@
-class Teacher
+require_relative 'Teaching'
+require_relative 'apprentice_teacher'
+class Teacher < ApprenticeTeacher
+  include Teaching
   attr_reader :age, :salary, :phase, :performance_rating, :target_raise
   attr_accessor :name
 
@@ -26,14 +29,14 @@ class Teacher
     response
   end
 
-  def salary=(new_salary)
-    puts "This better be good!"
-    @salary = new_salary
-  end
+  # def salary=(new_salary)
+  #   puts "This better be good!"
+  #   @salary = new_salary
+  # end
 
-  def receive_raise(raise)
-    @salary += raise
-  end
+  # def receive_raise(raise)
+  #   @salary += raise
+  # end
 
   def set_performance_rating(rating)
     response = ""
